@@ -18,6 +18,7 @@ public:
   void attack_end(Ends ends);
   double get_weight() override;
   double get_knot_position();
+  double get_length();
 
 private:
   const double length_;

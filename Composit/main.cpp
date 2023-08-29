@@ -23,8 +23,8 @@ int main() {
   stick_2.attack_end(end_2);
 
   stick_1.balance();
-  std::cout << "Stick 1:\nKnoten = " << stick_1.get_knot_position()
-            << "\nGewicht: " << stick_1.get_weight()
-            << "\n\nStick 2:\nKnoten = " << stick_2.get_knot_position()
-            << "\nGewicht: " << stick_2.get_weight() << std::endl;
+  std::cout << "\nMobile 1:\nGewicht: " << stick_1.get_weight() <<
+            "\n( " << stick_1.get_knot_position() << " | " << stick_1.get_length() - stick_1.get_knot_position() << " ) "
+            << "\n\nMobile 2:\nGewicht: " << stick_2.get_weight() <<
+            "\n( " << stick_2.get_knot_position() << " | " << stick_2.get_length() - stick_2.get_knot_position() << " ) " << std::endl;
 }

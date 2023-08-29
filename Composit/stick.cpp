@@ -26,3 +26,6 @@ double Stick::get_weight() {
 double Stick::get_knot_position() {
   return knot_position_;
 }
+double Stick::get_length() {
+  return length_;
+}
