@@ -1,11 +1,11 @@
 #include "weather_data.hpp"
 
-void WeatherData::register_observer(const std::shared_ptr<Observer> observer) {
+void WeatherData::register_observer(Observer *observer) {
   observers_.push_back(observer);
 }
 
-void WeatherData::remove_observer(const std::shared_ptr<Observer> observer) {
-  //Delete form List
+void WeatherData::remove_observer(Observer* observer) {
+  observers_.remove(observer);
 }
 
 void WeatherData::measurements_changed() {
@@ -26,14 +26,14 @@ void WeatherData::set_measurements(float temp, float humidity, float pressure) {
   measurements_changed();
 }
 
-const float WeatherData::get_temperature() {
+float WeatherData::get_temperature() {
   return temperature_;
 }
 
-const float WeatherData::get_humidity() {
+float WeatherData::get_humidity() {
   return humidity_;
 }
 
-const float WeatherData::get_air_pressure() {
+float WeatherData::get_air_pressure() {
   return air_pressure_;
 }

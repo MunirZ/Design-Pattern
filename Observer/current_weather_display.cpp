@@ -2,14 +2,14 @@
 
 #include <iostream>
 
-CurrentWeatherDisplay::CurrentWeatherDisplay(const std::shared_ptr<WeatherData> weather)
+CurrentWeatherDisplay::CurrentWeatherDisplay(WeatherData& weather)
   : weather_data_(weather) {
-  weather_data_->register_observer(shared_from_this());
+  weather_data_.register_observer(this);
 }
 
 void CurrentWeatherDisplay::update() {
   std::cout << "Current Weather Conditions: "
-	          << "\nTemperature: " << weather_data_->get_temperature() << "C, "
-            << "\nHumidity: " << weather_data_->get_humidity() << "%"
-	          << "\nPressure: " << weather_data_->get_air_pressure() << "hPa\n";
+            << "\nTemperature: " << weather_data_.get_temperature() << "C, "
+            << "\nHumidity: " << weather_data_.get_humidity() << "%"
+            << "\nPressure: " << weather_data_.get_air_pressure() << "hPa\n";
 }

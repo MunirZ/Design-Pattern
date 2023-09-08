@@ -4,11 +4,11 @@
 
 #include <memory>
 
-class WeatherStatisticsDisplay : public Observer, public std::enable_shared_from_this<WeatherStatisticsDisplay> {
+class WeatherStatisticsDisplay : public Observer {
 public:
-  WeatherStatisticsDisplay(const std::shared_ptr<WeatherData> weather);
+  explicit WeatherStatisticsDisplay(WeatherData& weather);
   void update() override;
 
 private:
-  std::shared_ptr<WeatherData> weather_data_;
+  WeatherData& weather_data_;
 };

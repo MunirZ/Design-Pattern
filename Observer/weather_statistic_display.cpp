@@ -2,9 +2,9 @@
 
 #include <iostream>
 
-WeatherStatisticsDisplay::WeatherStatisticsDisplay(const std::shared_ptr<WeatherData> weather)
+WeatherStatisticsDisplay::WeatherStatisticsDisplay(WeatherData& weather)
   : weather_data_(weather) {
-  weather_data_->register_observer(shared_from_this());
+  weather_data_.register_observer(this);
 }
 
 void WeatherStatisticsDisplay::update() {
