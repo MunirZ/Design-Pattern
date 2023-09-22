@@ -1,12 +1,17 @@
 #pragma once
 
 #include "sort_strategy.hpp"
-
-#include <array>
+#include "bubble_sort.hpp"
 
 class SortingContext {
 public:
-  void set_sort_algorithm(SortAlgorithm algorithm);
+  ~SortingContext();
+
+  void set_sort_algorithm(SortStrategy* algorithm);
   void set_sorting_order(SortOrder order);
-  void sort_array();
+
+  void sort_vector(std::vector<int> &vector);
+
+private:
+  SortStrategy* strategy_;
 };

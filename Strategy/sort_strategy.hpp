@@ -2,11 +2,12 @@
 
 enum SortOrder { Descending, Ascending };
 
-#include <stddef.h>
+#include <cstddef>
+#include <vector>
 
 class SortStrategy {
-  template <typename T, size_t size>
-  void sort_array(T (&array)[size]);
+public:
+  virtual void sort_vector(std::vector<int>& vector) = 0;
 
-  void set_sort_order(SortOrder order);
+  virtual void set_sort_order(SortOrder order) = 0;
 };
